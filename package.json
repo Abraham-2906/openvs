@@ -1,0 +1,22 @@
+{
+  "name": "openvs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "dev": "servor src/index.html 1234 --reload",
+    "build": "echo 'Build script'",
+    "deploy": "echo 'Deploy script'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.22.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module"
+}
