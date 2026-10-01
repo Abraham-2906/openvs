@@ -1,0 +1,70 @@
+/* Estilos generales para centrar el diseño */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #adfac6;
+}
+
+/* para la vista de tablet*/
+.tablet-container {
+    display: grid;
+
+    /* division del contenedor en 4 columnas y dos filas */
+   
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    
+    /*distribucion */
+    grid-template-areas:
+        "a a d d"
+        "b c d d";
+        
+
+    gap: 15px;
+    width: 600px;
+    height: 350px;
+    background-color: #ff0000;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+/*  caja con su área de Grid */
+.box.a { grid-area: a; }
+.box.b { grid-area: b; }
+.box.c { grid-area: c; }
+.box.d { grid-area: d; }
+
+/* Estiloscajas */
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    background-color: #fb94fd;
+    border: 2px solid #555;
+    border-radius: 4px;
+    
+   
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto Hover */
+.box:hover {
+    background-color: #e3f2fd;        
+    transform: translateY(-6px);      
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-color: #1976d2;            
+}
