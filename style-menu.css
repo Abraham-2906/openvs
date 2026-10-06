@@ -1,0 +1,79 @@
+/* centrado de la página */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Tarjeta principal */
+.menu-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+}
+
+/* titulos */
+.menu-container h1 {
+    font-size: 26px;
+    color: #1a365d;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/*  enlaces */
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* botones del menú */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2b6cb0;
+    font-weight: 600;
+    font-size: 16px;
+    
+    /* animacion  */
+    transition: all 0.3s ease;
+}
+
+.icon {
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+/* Efecto Hover */
+.nav-links a:hover {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    border-color: #3182ce;
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 15px rgba(49, 130, 206, 0.15);
+}
