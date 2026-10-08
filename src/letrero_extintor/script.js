@@ -1,4 +1,4 @@
-// Inicializar el contexto de audio del navegador al primer clic del usuario
+
 let audioCtx = null;
 
 function getAudioContext() {
@@ -11,12 +11,12 @@ function getAudioContext() {
     return audioContext;
 }
 
-// 1. SONIDO DE FUEGO (Para el basurero en llamas)
+// sonido que simula fuego
 function playFireSound() {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     
-    // Generador de ruido blanco simulando el crujido del fuego
-    const bufferSize = ctx.sampleRate * 0.8; // Duración 0.8 segundos
+
+    const bufferSize = ctx.sampleRate * 0.8;
     const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
     const data = buffer.getChannelData(0);
     
@@ -27,7 +27,6 @@ function playFireSound() {
     const noise = ctx.createBufferSource();
     noise.buffer = buffer;
 
-    // Filtro para dar tono de combustión
     const filter = ctx.createBiquadFilter();
     filter.type = 'bandpass';
     filter.frequency.setValueAtTime(800, ctx.currentTime);
@@ -44,7 +43,7 @@ function playFireSound() {
     noise.start();
 }
 
-// 2. SONIDO DE SIRENA (Para la A verde)
+
 function playSirenSound() {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
@@ -52,7 +51,7 @@ function playSirenSound() {
 
     osc.type = 'sawtooth';
     
-    // Efecto de cambio de frecuencia oscilante (Sirena de emergencia)
+  
     const now = ctx.currentTime;
     osc.frequency.setValueAtTime(400, now);
     osc.frequency.linearRampToValueAtTime(850, now + 0.3);
@@ -68,14 +67,14 @@ function playSirenSound() {
     osc.stop(now + 0.6);
 }
 
-// 3. SONIDO DE ALARMA / BEEP (Recomendado para las letras EXTINTOR y franjas inferiores)
+// 3. SONIDO DE ALARMA 
 function playAlarmSound() {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
 
     osc.type = 'square';
-    osc.frequency.setValueAtTime(587.33, ctx.currentTime); // Nota Re5 aguda
+    osc.frequency.setValueAtTime(587.33, ctx.currentTime); 
 
     gain.gain.setValueAtTime(0.2, ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
@@ -87,9 +86,7 @@ function playAlarmSound() {
     osc.stop(ctx.currentTime + 0.4);
 }
 
-// ==========================================
-// ASOCIAR LOS EVENTOS DE CLIC EN LA PÁGINA
-// ==========================================
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // A. Clic en la A verde -> Sonido de Sirena
@@ -122,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Función extra para hacer un pequeño destello visual al presionar cada elemento
+//  hacer un pequeño destello  al presionar cada elemento
 function triggerVisualEffect(element) {
     element.style.transform = 'scale(0.92)';
     setTimeout(() => {

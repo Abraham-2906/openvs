@@ -82,29 +82,31 @@ body {
     filter: brightness(1.1);
 }
 
-/* Letra A dentro del triángulo verde */
+
 .triangle-a {
-    width: 0;
-    height: 0;
-    border-left: 35px solid transparent;
-    border-right: 35px solid transparent;
-    border-bottom: 60px solid #16a34a;
+    width: 70px;   
+    height: 60px;  
+    background-color: #16a34a; 
+  
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center; 
     margin-bottom: 5px;
 }
 
+
 .triangle-a span {
     color: white;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
-    position: absolute;
-    bottom: 4px;
+  
+    margin-top: 10px; 
 }
 
-/* Icono del basurero */
+
 .trash-icon-container {
     background-color: #2563eb;
     padding: 10px 20px;
@@ -126,7 +128,7 @@ body {
     margin-top: 5px;
 }
 
-/* Sección de Instrucciones */
+
 .instructions-section {
     padding: 15px 25px;
 }
@@ -147,7 +149,7 @@ body {
     font-weight: 600;
 }
 
-/* 2. Franjas Diagonales Inferiores Rojas y Blancas */
+
 .diagonal-stripes {
     height: 90px;
     display: flex;
