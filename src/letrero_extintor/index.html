@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letrero Extintor Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="extinguisher-sign">
+        
+        <!-- Franja superior roja con letras EXTINTOR -->
+        <header id="extintor-header" class="header-banner">
+            <h1>EXTINTOR</h1>
+        </header>
+
+        <!-- Subtítulo de clase -->
+        <div class="subtitle-use">
+            USELO UNICAMENTE EN FUEGO CLASE
+        </div>
+
+        <!-- Sección de Símbolos (A verde y Basura/Fuego) -->
+        <div class="symbols-section">
+            <!-- Letra A verde con animación y sonido de sirena -->
+            <div id="green-a" class="symbol-box interactive-hover" title="¡Haz clic para activar sirena!">
+                <div class="triangle-a">
+                    <span>A</span>
+                </div>
+            </div>
+
+            <!-- Icono de Sólidos / Basura en llamas (Sonido de fuego) -->
+            <div id="fire-trash" class="symbol-box interactive-hover" title="¡Haz clic para escuchar fuego!">
+                <div class="trash-icon-container">
+                    <!-- Icono simulado de basurero con llamas -->
+                    <div class="trash-can">🗑️🔥</div>
+                </div>
+            </div>
+
+            <div class="solids-text">
+                <strong>SOLIDOS COMBUSTIBLES</strong><br>
+                madera, papel,<br>
+                tela, basura<br>
+                cartones
+            </div>
+        </div>
+
+        <!-- Método para utilizarlo -->
+        <div class="instructions-section">
+            <h2 class="methods-title">METODO PARA UTILIZARLO</h2>
+            <ol class="steps-list">
+                <li>Sosténgalo en posición vertical.</li>
+                <li>Retire el seguro.</li>
+                <li>Oprima la palanca.</li>
+                <li>Dirija la descarga contra la base de la llama.</li>
+            </ol>
+        </div>
+
+        <!-- Franjas diagonales rojas y blancas inferiores (Alarma) -->
+        <div id="diagonal-stripes" class="diagonal-stripes interactive-hover" title="¡Haz clic para sonido de alerta!">
+            <!-- Franjas visuales decorativas -->
+            <div class="stripe red"></div>
+            <div class="stripe white"></div>
+            <div class="stripe red"></div>
+            <div class="stripe white"></div>
+            <div class="stripe red"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
